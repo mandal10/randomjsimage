@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+
+        width: 100%;
+        height: 450px;
+    }
+
+    .btn1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #btn {
+        padding: 5px 20px;
+        background-color: blue;
+        color: white;
+        border: none;
+    }
+
+    @media screen and (min-device-width: 0px) and (max-device-width: 300px) {
+        img {
+            transition: all 0.5s;
+            height: 200px;
+        }
+
+        #btn {
+            padding: 5px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+
+        }
+    }
+
+    @media screen and (min-device-width: 300px) and (max-device-width: 768px) {
+        img {
+
+
+            height: 250px;
+            transition: all 0.5s;
+        }
+
+        #btn {
+            padding: 5px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+
+        }
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <img src="img1.jpg" alt="">
+        <div class="btn1">
+            <button id="btn">change image</button>
+
+        </div>
+    </div>
+    <script>
+
+        let btn = document.getElementById("btn");
+
+
+        btn.addEventListener("click", function () {
+            let array = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.png", "img6.jpg", "img7.jpg", "img8.jpg", "img8.jpg", "img9.jpg"];
+
+            let randomImage = array[(Math.floor(Math.random() * array.length))];
+
+            console.log(randomImage)
+
+            let image = document.querySelector("img")
+
+
+            image.src = randomImage;
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
